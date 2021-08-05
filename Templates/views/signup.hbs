@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    {{>head}}
+    <title>Log In</title>
+  </head>
+  <body>
+    <!-- Navigation bar-->
+    
+    {{>navbar}}
+    <!-- Header -->
+    <div class="container">
+        <h2 class="alert alert-info"> Signup Form </h2>
+        <form class="form" action="/signup" method="post">
+        <div class="col-md-10">
+                <input type="text" class="form-control" placeholder="First Name" name = "fname" required><br>
+                <input type="text" placeholder="Last Name" class="form-control" name = "lname"><br>
+                <input type="email" placeholder = "Email" class="form-control" name="email" required><br>
+                <div class="radio-inline">
+                    <input type="radio" name="gender" value="Male">Male
+                </div>
+                <div class="radio-inline">
+                    <input type="radio" name="gender"  value="Female">Female<br>
+                </div>
+                <input type="tel" name="phone" class="form-control" placeholder="Phone Number"><br>
+                <input type="number" name="age" class="form-control" placeholder="Age"><br>
+                <input type="password" name="pass" class="form-control" placeholder="Password" required><br>
+                <input type="password" name="cpass"  class="form-control" placeholder="Confirm Password"required><br>
+                <input type="submit" class = "btn btn-primary" value="Register">
+        </div>
+        </form>
+    </div>
+
+    <!-- Footer-->
+    {{>footer}}
+
+  </body>
+</html>

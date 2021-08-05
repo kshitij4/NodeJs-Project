@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    {{>head}}
+    <title>Log In</title>
+  </head>
+  <body>
+    <!-- Navigation bar-->
+    
+    {{>navbar}}
+    
+    <!-- Header -->
+    <div class="container">
+        <h2 class="alert alert-info"> Login Form </h2>
+        <form class="form" action="" method="post">
+        <div class="col-md-10">                
+            <input type="email" placeholder = "Email" class="form-control" name="email" required><br>
+            <input type="password" name="pass" class="form-control" placeholder="Password" required><br>
+            <input type="submit" class = "btn btn-primary" value="Log In">
+        </div>
+        </form>
+    </div>
+
+    <!-- Footer-->
+    {{>footer}}
+
+  </body>
+</html>
