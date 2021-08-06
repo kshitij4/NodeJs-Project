@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const musicalSchema = mongoose.Schema({
   firstname: {
@@ -39,8 +40,28 @@ const musicalSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  tokens: [{
+    token: {
+      type: String,
+      required: true,
+    }
+  }]
 });
 
+// generating tokens
+musicalSchema.methods.generateToken= async function(){
+  try {
+    const token = jwt.sign({_id: this._id}, process.env.SPECIAL_KEY);
+    this.tokens = this.tokens.concat({token});
+    await this.save();
+    return token;
+  } catch (error) {
+    res.send(error);
+  }
+}
+
+
+//Hashing password
 musicalSchema.pre("save", async function(next) {
     if(this.isModified("password")){
         this.password = await bcrypt.hash(this.password,10);

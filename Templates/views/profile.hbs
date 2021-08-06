@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    {{>head}}
+    <title>Musical </title>
+  </head>
+  <body>
+    <!-- Navigation bar-->
+    {{>loginNav}}
+
+    <!-- Header -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="alert alert-success"> Welcome to your Profile!! 
+            <i>{{user.firstname}} {{user.lastname}}</i>
+          </h2>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Footer-->
+    {{>footer}}
+
+  </body>
+</html>
