@@ -73,7 +73,7 @@ app.post("/signup", async (req, res) => {
 			const token = await registerMusical.generateToken();
 
 			res.cookie("jwt", token, {
-				maxAge: 50000,
+				maxAge: 500000,
 				httpOnly: true,
 				// secure: true
 			});

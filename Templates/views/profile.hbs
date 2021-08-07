@@ -12,8 +12,15 @@
       <div class="row">
         <div class="col-sm-12">
           <h2 class="alert alert-success"> Welcome to your Profile!! 
-            <i>{{user.firstname}} {{user.lastname}}</i>
+            <i>{{user.firstname}}</i>
           </h2>
+          <div class="alert alert-info">
+            <p>Name: {{user.firstname}} {{user.lastname}} </p>
+            <p>Email: {{user.email}}</p>
+            <p>Gender: {{user.gender}}</p>
+            <p>Phone: {{user.phone}}</p>
+            <p>Age: {{user.age}}</p>
+          </div>
         </div>
       </div>
     </div>
