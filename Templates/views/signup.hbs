@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
     {{>head}}
-    <title>Log In</title>
+    <title>Sign Up</title>
   </head>
   <body>
     <!-- Navigation bar-->
@@ -23,7 +23,8 @@
                 </div>
                 <input type="tel" name="phone" class="form-control" placeholder="Phone Number"><br>
                 <input type="number" name="age" class="form-control" placeholder="Age"><br>
-                <input type="password" name="pass" class="form-control" placeholder="Password" required><br>
+                <input type="password" name="pass" class="form-control" placeholder="Password" required
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"><br>
                 <input type="password" name="cpass"  class="form-control" placeholder="Confirm Password"required><br>
                 <input type="submit" class = "btn btn-primary" value="Register">
         </div>

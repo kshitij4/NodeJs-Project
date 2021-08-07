@@ -42,6 +42,10 @@ app.get("/profile", auth, (req, res) => {
 	});
 });
 
+app.get("/logedin", auth, (req, res) => {
+	res.render("logedin");
+});
+
 app.get("/logout", auth, async (req, res) => {
 	try {
 		req.user.tokens = req.user.tokens.filter((curr) => {
@@ -50,7 +54,7 @@ app.get("/logout", auth, async (req, res) => {
 		res.clearCookie("jwt");
 		console.log("Logged out Successfully!!");
 		await req.user.save();
-		res.render("login");
+		res.redirect("login");
 	} catch (error) {
 		res.status(500).send(error);
 	}
@@ -94,8 +98,8 @@ app.post("/login", async (req, res) => {
 		const pass = req.body.pass;
 		const musicalData = await Musical.findOne({ email });
 		const isMatch = await bcrypt.compare(pass, musicalData.password);
-		const token = await musicalData.generateToken();
-		if (isMatch) {
+		if (isMatch) {			
+			const token = await musicalData.generateToken();
 			res.cookie("jwt", token, {
 				maxAge: 50000,
 				httpOnly: true,
