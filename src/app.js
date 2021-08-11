@@ -101,7 +101,7 @@ app.post("/login", async (req, res) => {
 		if (isMatch) {			
 			const token = await musicalData.generateToken();
 			res.cookie("jwt", token, {
-				maxAge: 50000,
+				maxAge: 5000000,
 				httpOnly: true,
 				// secure: true
 			});
