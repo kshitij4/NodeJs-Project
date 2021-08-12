@@ -6,7 +6,7 @@
 >
 >>**Bootstrap** for styling the pages
 >
->>**Mongodb** for storing user data in database
+>>**Mongodb Atlas** for storing user data in database
 >
 >>Encryption and hashing of passwords using **Bcryptjs**
 >
